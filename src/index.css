@@ -45,3 +45,26 @@
     margin-left: 10px;
     font-weight: 500;
 }
+.parrafo{
+    color: gray;
+    font-size: 1.25rem; 
+    line-height: 1.75rem;
+    margin-top: 1rem;
+    max-width: 42rem;
+    line-height: 1.75rem;
+    text-align: center;
+}
+
+.titulo {
+    color: #0000;
+    text-shadow: 
+    0 0 #5D568C, 
+    0 1.2em #1095c1;
+    overflow: hidden;
+    transition: .3s;
+  }
+  .titulo:hover {
+    text-shadow: 
+      0 -1.2em #000, 
+      0 0 rgb(135, 206, 170);
+  }
