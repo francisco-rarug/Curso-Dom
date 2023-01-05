@@ -1,4 +1,10 @@
 const appNode = document.querySelector('#app');
+//Este metodo es para enviar a un mensaje al usuario cada vez que haga click sobre el h2 del contenedor
+appNode.addEventListener('click', (event) => {
+    if (event.target.nodeName === "H2"){
+        window.alert('Hola, estas interesado en este tipo de palta?')
+    } 
+})
 //const url = "https://platzi-avo.vercel.app/api/avo";
 
 /* Cambiamos la url que tenemos por una url base
@@ -6,6 +12,7 @@ y lo que hacemos es agregarle atraves de  un template string
 el resto de la url que teniamos en el fetch*/
 
 const baseUrl='https://platzi-avo.vercel.app'
+//Usando la api de monetizacion internacional
 const formatPrice=(price)=>{
     const newPrice=new window.Intl.NumberFormat("en-EN",{
         style:"currency",
@@ -42,6 +49,10 @@ window
         //create title
         const titulo = document.createElement('h2');
         titulo.textContent = item.name;
+
+        /*titulo.addEventListener('click', () => {
+            window.alert('Hola, estas interesado en este tipo de palta?')
+        })*/
         titulo.className="title";
 
        //create price
