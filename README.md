@@ -28,8 +28,7 @@ Una aplicación sencilla que consume la API de monetizacion internacional y una 
     
 ## 🚀 Ejecución del proyecto
 
-**Ejecutar la aplicación:**:
-Una vez que hayas completado los pasos de instalación, puedes ejecutar la aplicación con el siguiente comando:
+. **Una vez que hayas completado los pasos de instalación, puedes ejecutar la aplicación con el siguiente comando:**
 
     npm start
 
