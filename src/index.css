@@ -40,7 +40,7 @@
     color: gray;
 }
 
-.title{
+.nombre{
     margin-top: 17px;
     margin-left: 10px;
     font-weight: 500;
@@ -68,3 +68,27 @@
       0 -1.2em #000, 
       0 0 rgb(135, 206, 170);
   }
+
+  #carritoIcono {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#menuCarrito {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    width: 250px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
