@@ -5,21 +5,15 @@ import {
     addToCart, 
     removeFromCart, 
     updateProductQuantity, 
-    actualizarMenuCarrito 
+    actualizarMenuCarrito,
+    calcularTotal,
+    formatPrice
 } from './carrito.js';
 
 loadCartFromStorage();
 
 const appNode = document.querySelector('#app');
 const baseUrl = 'https://platzi-avo.vercel.app';
-
-// Función para formatear precios
-const formatPrice = (price) => {
-    return new window.Intl.NumberFormat("es-AR", {
-        style: "currency",
-        currency: "ARS",
-    }).format(price);
-};
 
 // Manejador de eventos para h2
 appNode.addEventListener('click', (event) => {
@@ -29,7 +23,10 @@ appNode.addEventListener('click', (event) => {
         if (userResponse) {
             const productId = event.target.getAttribute('data-id');
             const productName = event.target.textContent;
-            addToCart(productId, productName); 
+            const productPrice = parseFloat(event.target.nextElementSibling.textContent.replace(/[^0-9.-]+/g,"")); 
+            addToCart(productId, productName, productPrice);
+
+            actualizarMenuCarrito(); 
         }
     }
 });
@@ -50,7 +47,7 @@ window.fetch(`${baseUrl}/api/avo`)
             // Crear título y añadir el data-id
             const titulo = document.createElement('h2');
             titulo.textContent = item.name;
-            titulo.setAttribute('data-id', item.id); // Aquí asignamos el ID
+            titulo.setAttribute('data-id', item.id);
             titulo.className = "nombre";
 
             // Crear precio

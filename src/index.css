@@ -2,6 +2,9 @@
 @import 'tailwindcss/dist/components.css';
 @import 'tailwindcss/dist/utilities.css';
 
+body{
+    background-color:antiquewhite
+}
 #app{
     display: flex;
     flex-direction: row;
@@ -9,6 +12,7 @@
     width: 100%;
     margin-left: 25px;
     margin-top: 25px;
+    background-color:beige
 }
 
 .palta-container{
@@ -45,6 +49,7 @@
     margin-left: 10px;
     font-weight: 500;
 }
+
 .parrafo{
     color: gray;
     font-size: 1.25rem; 
@@ -63,6 +68,7 @@
     overflow: hidden;
     transition: .3s;
   }
+  
   .titulo:hover {
     text-shadow: 
       0 -1.2em #000, 
@@ -81,14 +87,42 @@
 }
 
 #menuCarrito {
-    display: none;
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    width: 250px;
-    max-height: 300px;
-    overflow-y: auto;
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Para que se muestre por encima de otros elementos */
+    right: 0; /* Suponiendo que el ícono del carrito está a la derecha, el menú desplegable se alineará con el borde derecho del ícono */
+    top: 100%; /* Se posiciona justo debajo del ícono del carrito */
+    width: 250px; /* Ancho del desplegable */
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Esto asegura que el menú esté por encima de otros elementos */
+    overflow-y: auto; /* En caso de que haya muchos productos, se podrá hacer scroll */
+    max-height: 300px; /* Altura máxima antes de empezar a hacer scroll */
+    
 }
+
+#menuCarrito div {
+    display: flex; /* Alinea horizontalmente el nombre del producto y el botón de eliminar */
+    justify-content: space-between; /* Maximiza el espacio entre el nombre del producto y el botón */
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#menuCarrito div:last-child {
+    border-bottom: none; /* Remueve el borde del último producto */
+}
+
+#menuCarrito button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+#menuCarrito button:hover {
+    background-color: darkred; /* Color más oscuro al pasar el cursor por encima */
+}
+
