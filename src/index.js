@@ -1,12 +1,10 @@
 import { 
-    carrito, 
     menuCarrito, 
     loadCartFromStorage, 
     addToCart, 
     removeFromCart, 
     updateProductQuantity, 
     actualizarMenuCarrito,
-    calcularTotal,
     formatPrice
 } from './carrito.js';
 
@@ -63,7 +61,6 @@ window.fetch(`${baseUrl}/api/avo`)
             todosLosItems.push(container);
         });
 
-        // Añadir todos los elementos al nodo principal
         appNode.append(...todosLosItems);
     });
 

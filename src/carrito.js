@@ -78,7 +78,8 @@ carritoIcono.addEventListener('click', () => {
 });
 
 function actualizarMenuCarrito() {
-    menuCarrito.innerHTML = ''; // Limpiar menú
+    menuCarrito.innerHTML = ''; 
+    
     carrito.forEach(producto => {
         const item = document.createElement('div');
 
@@ -90,17 +91,17 @@ function actualizarMenuCarrito() {
         botonEliminar.setAttribute('data-id', producto.id);
         botonEliminar.classList.add('eliminarProducto', 'btn-eliminar');
 
-
         item.appendChild(nombreProducto);
         item.appendChild(botonEliminar);
         menuCarrito.appendChild(item);
-
-        const totalContainer = document.createElement('div');
-        totalContainer.textContent = `Total: ${formatPrice(calcularTotal())}`; 
-        menuCarrito.appendChild(totalContainer);
-
     });
+
+    // Crear y agregar el total al final, fuera del bucle
+    const totalContainer = document.createElement('div');
+    totalContainer.textContent = `Total: ${formatPrice(calcularTotal())}`; 
+    menuCarrito.appendChild(totalContainer);
 }
+
 
 function calcularTotal() {
     return carrito.reduce((total, producto) => total + (producto.price * producto.cantidad), 0);
